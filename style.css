@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;700;800&display=swap');
+
+:root {
+    --primary-color: #606060;
+    --secondary-color: #303030;
+}
+
+*, html, #root {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 300;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+
+.card .card__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 0px;
+    height: 0px;
+    margin: 30px 0;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: .3s ease-in-out;
+}
+
+.card .card__icon i {
+    font-size: 5rem;
+}
+
+.card .card__description {
+    text-align: center;
+    opacity: 0;
+    margin-top: -100px;
+    transition: .3s ease-in-out;
+}
+
+.card:hover > .card__icon {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(0,0,0,.2);
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.card:hover > .card__description {
+    position: relative;
+    margin-top: 0px;
+    opacity: 1;
+}
+
+@media screen and (max-width:700px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
